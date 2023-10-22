@@ -5,11 +5,14 @@ import SignOut from "./pages/SignOut";
 import Profile from "./pages/Profile";
 import ForgotPassword from "./pages/ForgotPassword";
 import Offers from "./pages/Offers";
+import Header from "./Components/Header";
+import Signup from "./pages/Signup";
 
 function App() {
   return (
    <>
-    <Router>
+       <Router>
+        <Header />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/signin" element={<SignIn />} />
@@ -17,6 +20,7 @@ function App() {
         <Route path="/Profile" element={<Profile />} />
         <Route path="/ForgotPassword" element={<ForgotPassword />} />
         <Route path="/Offers" element={<Offers /> } />
+        <Route path="/signup" element={<Signup /> } />
       </Routes>
     </Router>
    </>

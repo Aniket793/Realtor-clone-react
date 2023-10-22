@@ -3,7 +3,8 @@ import { useState } from 'react'
 import { AiFillEyeInvisible,AiFillEye } from 'react-icons/ai'
 import { FcGoogle } from 'react-icons/fc'
 
-export default function SignIn() {
+export default function SignUp() {
+  const [ name,setName ] = useState('');
   const [ username, setUsername ] = useState("");
   const [ password, setPassword ] = useState("");
   const [ showPassword , setShowPassword ] = useState(false);
@@ -12,7 +13,7 @@ export default function SignIn() {
 
     <>
     <div className=''>
-      <h1 className='text-3xl font-bold text-center mt-9'>Sign-In</h1>
+      <h1 className='text-3xl font-bold text-center mt-9'>Sign-Up</h1>
     </div>
 
     <div className='flex justify-center item-center px-6 py-12 max-w-6xl mx-auto'>
@@ -21,6 +22,10 @@ export default function SignIn() {
       </div>
       <div className='w-full md:w-[67%] lg:w-[40%] lg:ml-20 ml-10 py-auto text-center' >
         <form action="">
+        <input className='p-3 my-5 sm:p-2 w-full border-2 rounded-md border-gray-300 transition ease-in-out' type="text" placeholder='Full name' onChange={(e)=>{
+            setUsername(e.target.value)
+            console.log(name)
+          }}/ >
           <input className='p-3 my-5 sm:p-2 w-full border-2 rounded-md border-gray-300 transition ease-in-out' type="text" placeholder='Email Address' onChange={(e)=>{
             setUsername(e.target.value)
             console.log(username)
@@ -29,18 +34,18 @@ export default function SignIn() {
           <input className='p-3 my-5 sm:p-2 w-full border-2 border-gray-300 transition ease-in-out rounded-md'  type={showPassword ? "text" : "password"} placeholder='password' onChange={(e)=>{
             setPassword(e.target.value);
           }} />{showPassword ? (
-            <AiFillEyeInvisible className='absolute right-[180px] top-[305px]' onClick={()=>{
+            <AiFillEyeInvisible className='absolute right-[180px] top-[387px]' onClick={()=>{
               setShowPassword(false);
             }} ></AiFillEyeInvisible>
-          ) : <AiFillEye className='absolute right-[180px] top-[305px]' onClick={()=>{
+          ) : <AiFillEye className='absolute right-[180px] top-[387px]' onClick={()=>{
             setShowPassword(true);
           }}></AiFillEye>}
          
         </form>
       <div className='flex justify-between'>
         <div>
-          <p className='inline'>Don't have an account?</p>
-          <a href="/signup" className='text-blue-300 hover:text-blue-600 transition-duration-2000 ease-in-out'>Register</a>
+          <p className='inline'>Have an account?</p>
+          <a href="/signin" className='text-blue-300 hover:text-blue-600 transition-duration-2000 ease-in-out'>Sign-In</a>
           </div>
           <div>
             <a href="/ForgotPassword" className='text-blue-300 hover:text-blue-600 transition-duration-2000 ease-in-out'>Forgot Password?</a>
